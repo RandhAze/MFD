@@ -1,0 +1,3 @@
+# screen size
+X_RESOLUTION = 1024
+Y_RESOLUTION = 600

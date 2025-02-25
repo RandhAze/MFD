@@ -1,0 +1,7 @@
+module QMLPages
+Main 254.0 Main.qml
+Home 254.0 Home.qml
+
+Test/FirstPage 254.0 Test/FirstPage.qml
+Test/SecondPage 254.0 Test/SecondPage.qml
+Test/TabBarComponent 254.0 Test/TabBarComponent.qml
