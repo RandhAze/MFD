@@ -2,6 +2,11 @@ module QMLPages
 Main 254.0 Main.qml
 Home 254.0 Home.qml
 
+# tests pages
 Test/FirstPage 254.0 Test/FirstPage.qml
 Test/SecondPage 254.0 Test/SecondPage.qml
 Test/TabBarComponent 254.0 Test/TabBarComponent.qml
+
+# SC pages
+StarCitizen/MFDConfigurator 254.0 StarCitizen/MFDConfigurator.qml
+StarCitizen/TabBarComponent 254.0 StarCitizen/TabBarComponent.qml

@@ -1,24 +1,16 @@
 import sys
-from PySide6.QtGui import QGuiApplication
-from PySide6.QtQml import QQmlApplicationEngine
-import constants
+from PyQt6.QtWidgets import QApplication
+from InputDetector import InputDetector
+from MainWindow import MainWindow
+
 
 if __name__ == "__main__":
-    app = QGuiApplication(sys.argv)
-    engine = QQmlApplicationEngine()
-    engine.addImportPath(sys.path[0])
-    
-    context = engine.rootContext()
-    
-    context.setContextProperty("windowWidth", constants.X_RESOLUTION)
-    context.setContextProperty("windowHeight", constants.Y_RESOLUTION)
+    app = QApplication(sys.argv)
+    screen_name = "MPI7002"
+    input_detector = InputDetector()
+    input_detector.configure(screen_name)  # ⚠️ Change le nom du périphérique si nécessaire
 
+    window = MainWindow(input_detector, screen_name)
+    window.show()
 
-    engine.loadFromModule("QMLPages", "Main")
-
-    if not engine.rootObjects():
-        sys.exit(-1)
-
-    exit_code = app.exec()
-    del engine
-    sys.exit(exit_code)
+    sys.exit(app.exec())

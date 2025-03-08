@@ -1,24 +1,36 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 2.15
 
 Item {
-    Column {
-        anchors.centerIn: parent
-        spacing: 20
+    ColumnLayout {
+        anchors.fill: parent
+        // Grille pour les blocs MFD
+        GridLayout {
+            columnSpacing: 0
+            rowSpacing: 0
+            columns: 2
 
-        Button {
-            text: "Star Citizen"
-            onClicked: stackView.push("Home.qml")  // Charge la première page du lot 1
-        }
+            Button {
+                property bool go_to: true
 
-        Button {
-            text: "DCS"
-            onClicked: stackView.push("Home.qml")  // Charge la première page du lot 1
-        }
+                text: "SC"
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                font.pixelSize: 24
 
-        Button {
-            text: "Test"
-            onClicked: stackView.push("Test/FirstPage.qml")  // Charge la première page du lot 2
+                onClicked: stackView.push("StarCitizen/MFDConfigurator.qml")
+            }
+
+            Button {
+                property bool go_to: true
+                text: "DCS"
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                font.pixelSize: 24
+
+                onClicked: stackView.push("StarCitizen/MFDConfigurator.qml")
+            }
         }
     }
 }
